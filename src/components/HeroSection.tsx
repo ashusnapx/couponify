@@ -9,11 +9,22 @@ import { MdOutlineStarPurple500 } from 'react-icons/md';
 import * as confetti from 'confettis';
 
 // Get the current date
+const daysOfWeek = [
+  'Sunday',
+  'Monday',
+  'Tuesday',
+  'Wednesday',
+  'Thursday',
+  'Friday',
+  'Saturday',
+];
 const currentDate = new Date();
 const day = currentDate.getDate();
-const month = currentDate.toLocaleString('default', { month: 'short' });
+const month = currentDate.toLocaleString('default', { month: 'long' });
 const year = currentDate.getFullYear();
-const formattedDate = `${day} ${month}, ${year}`;
+const dayOfWeekIndex = currentDate.getDay();
+const dayOfWeekName = daysOfWeek[dayOfWeekIndex];
+const formattedDate = `${dayOfWeekName}, ${day} ${month}, ${year}`;
 
 // HeroSection component
 const HeroSection = () => {
@@ -38,7 +49,7 @@ const HeroSection = () => {
         speed: [35, 45],
         scale: [0.7, 0.8],
         decay: 0.91,
-        shapes: ['circle','square', 'ellipse', 'star'],
+        shapes: ['square', 'ellipse'],
       });
 
       // Reset the copy state after a brief delay
@@ -74,7 +85,7 @@ const HeroSection = () => {
   };
 
   return (
-    <div className='mt-9 md:mt-0 flex flex-col md:flex-row items-center justify-between h-[95v] md:h-screen bg-gradient-to-r from-violet-600 to-fuchsia-900 p-3 sticky md:top-0 z-1'>
+    <div className='mt-[50px] md:mt-0 flex flex-col md:flex-row items-center justify-between h-[95v] md:h-screen bg-gradient-to-r from-violet-200 to-pink-200 p-3 sticky md:top-0 z-1'>
       {/* Left side with video */}
       <div className='md:w-1/2 md:pr-4 relative'>
         <video
@@ -82,6 +93,9 @@ const HeroSection = () => {
           muted
           loop
           className='w-full h-56 md:h-96 object-cover md:mt-0 mt-8 shadow-2xl'
+          poster='https://miro.medium.com/v2/resize:fit:1200/1*YU1-Sb15VwncAF6oWxW3wQ.jpeg'
+          preload='auto'
+          controlsList='nodownload nofullscreen noremoteplayback'
         >
           <source src='/landing.mp4' />
         </video>
@@ -118,7 +132,7 @@ const HeroSection = () => {
         <div className='text-2xl md:text-4xl font-extrabold text-center md:text-left text-yellow-500 mb-4 capitalize bg-gray-700 w-fit px-1'>
           &quot;Money grows on skills, not trees&quot;
         </div>
-        <div className='text-xl md:text-lg leading-relaxed text-start md:text-left text-white/80 mb-6'>
+        <div className='text-xl md:text-lg leading-relaxed text-start md:text-left text-black mb-6'>
           <ul className='list-none pl-5'>
             {/* List of benefits */}
             <li className='mb-4 flex items-center'>
@@ -127,7 +141,7 @@ const HeroSection = () => {
               </div>
               <div>
                 Unlock Additional{' '}
-                <span className='font-bold text-green-600'> ₹5,000</span>{' '}
+                <span className='font-bold text-green-600'> ₹15,000</span>{' '}
                 Referral Discount – Limited Availability!
               </div>
             </li>
@@ -138,22 +152,26 @@ const HeroSection = () => {
               <div>
                 Be an Early Bird and Enjoy Exclusive{' '}
                 <span className='line-through'>20%</span>{' '}
-                <span className='font-bold text-green-600'>30% Discount</span>{' '}
-                on Select Courses.
+                <span className='font-bold text-green-600'>~90% Discount</span>{' '}
+                on Selected Courses.
               </div>
-            </li>
-            <li className='mb-4 flex items-start'>
-              <div className='mr-2 text-green-500'>
-                <VscVerifiedFilled className='w-7 h-7' />
-              </div>
-              <div>Save Big! Avail Up to ₹8,000 Off on Every Course Today.</div>
             </li>
             <li className='mb-4 flex items-start'>
               <div className='mr-2 text-green-500'>
                 <VscVerifiedFilled className='w-7 h-7' />
               </div>
               <div>
-                <strong>Stay Informed:</strong> Discounts Last Updated On{' '}
+                Save Big! Avail Up to{' '}
+                <span className='font-bold text-green-600'>₹8,000 Off</span> on
+                Every Course Today.
+              </div>
+            </li>
+            <li className='mb-4 flex items-start'>
+              <div className='mr-2 text-green-500'>
+                <VscVerifiedFilled className='w-7 h-7' />
+              </div>
+              <div>
+                <strong>Best Discount</strong> as on{' '}
                 <span className='font-bold text-green-600'>
                   {formattedDate}
                 </span>
@@ -164,9 +182,6 @@ const HeroSection = () => {
                 <VscVerifiedFilled className='w-7 h-7' />
               </div>
               <div>
-                <span role='img' aria-label='globe emoji'>
-                  🌐
-                </span>{' '}
                 Experience the GUARANTEED{' '}
                 <span className='font-bold text-green-600'>
                   Maximum Savings{' '}
@@ -179,7 +194,7 @@ const HeroSection = () => {
 
         {/* Coupon code and copy button */}
         <div className='flex items-center justify-center md:justify-start mb-6'>
-          <div className='text-xl md:text-3xl font-bold text-yellow-500 mr-2'>
+          <div className='text-xl md:text-3xl font-bold text-black mr-2'>
             Use Coupon Code:
           </div>
           <button

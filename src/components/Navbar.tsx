@@ -1,5 +1,6 @@
 "use client"
 
+import { ExternalLinkIcon } from 'lucide-react';
 import React, { useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 
@@ -38,7 +39,7 @@ const Navbar = () => {
   ];
 
   return (
-    <div className='flex flex-col md:flex-row items-center justify-between bg-gray-900 text-white p-3 md:p-5 fixed w-full top-0 z-20'>
+    <div className='flex flex-col md:flex-row items-center justify-between bg-gray-900 text-white p-3 md:p-4 fixed w-full top-0 z-20 rounded-b-xl'>
       <div className='flex flex-row items-center justify-between space-x-5'>
         <div className='text-2xl md:text-3xl font-bold'>
           Coding Ninjas Coupon
@@ -65,10 +66,13 @@ const Navbar = () => {
             className={`mb-2 md:mb-0 transition duration-300 ease-in-out ${
               isOpen
                 ? 'hover:text-orange-600 hover:border hover:border-gray-300 px-2 py-1 rounded-md hover:bg-white'
-                : 'hover:text-orange-600 hover:border hover:border-gray-300 px-2 py-1 rounded-md hover:bg-white/20'
+                : 'hover:text-orange-600 hover:border hover:border-gray-300 px-2 py-1 rounded-md hover:bg-white'
             }`}
           >
-            {item.label}
+            <div className='flex flex-row items-center justify-center ,md:space-x-0 space-x-2'>
+              <h1>{item.label} </h1>
+              <ExternalLinkIcon />
+            </div>
           </a>
         ))}
       </div>

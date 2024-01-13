@@ -3,9 +3,9 @@ import { FaSquareXTwitter, FaLinkedin, FaGithub } from 'react-icons/fa6';
 
 const Footer = () => {
   return (
-    <div className='flex flex-col md:flex-row items-center justify-between bg-gray-900 text-white p-4 md:p-6 w-full md:sticky bottom-0'>
+    <div className='flex flex-col md:flex-row items-center justify-between bg-gray-900 text-white p-4 md:p-6 w-full md:sticky bottom-0 rounded-t-xl'>
       {/* Left section with the quote */}
-      <div className='mb-4 md:mb-0 text-center md:text-left'>
+      <div className='mb-4 md:mb-0 text-center md:text-left italic'>
         <p className='text-xl md:text-2xl font-bold'>
           &quot;Invest in your skills, they are the true currency of
           success.&quot;

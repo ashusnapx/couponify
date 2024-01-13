@@ -1,10 +1,13 @@
 // Import necessary modules and styles
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Poppins } from 'next/font/google';
 import './globals.css';
 
 // Load Inter font
-const inter = Inter({ subsets: ['latin'] });
+const inter = Poppins({
+  subsets: ['latin'],
+  weight: ['100', '200', '300', '400', '500', '600','700'],
+});
 
 // Define metadata for SEO
 export const metadata: Metadata = {
