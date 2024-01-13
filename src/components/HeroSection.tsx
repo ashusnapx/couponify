@@ -62,7 +62,7 @@ const HeroSection = () => {
           autoPlay
           muted
           loop
-          className='w-full h-56 md:h-96 object-cover md:mt-0 mt-8'
+          className='w-full h-56 md:h-96 object-cover md:mt-0 mt-8 shadow-2xl'
         >
           <source src='/landing.mp4' />
         </video>
@@ -183,7 +183,7 @@ const HeroSection = () => {
         {/* Button to explore courses */}
         <div>
           <button
-            className={`bg-blue-500 w-full text-white px-8 py-3 rounded-full text-xl hover:bg-blue-600 transition duration-300 ease-in-out ${
+            className={`bg-blue-500 w-full text-white px-8 py-3 rounded-full text-xl hover:bg-blue-600 transition duration-300 ease-in-out shadow-md ${
               isLoading && 'cursor-not-allowed opacity-50'
             }`}
             onClick={handleButtonClick}

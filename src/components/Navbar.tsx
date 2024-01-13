@@ -63,7 +63,9 @@ const Navbar = () => {
             href={item.link}
             target='_blank'
             className={`mb-2 md:mb-0 transition duration-300 ease-in-out ${
-              isOpen ? 'hover:text-orange-600' : ''
+              isOpen
+                ? 'hover:text-orange-600 hover:border hover:border-gray-300 px-2 py-1 rounded-md hover:bg-white'
+                : 'hover:text-orange-600 hover:border hover:border-gray-300 px-2 py-1 rounded-md hover:bg-white/20'
             }`}
           >
             {item.label}
