@@ -13,12 +13,12 @@ export const metadata: Metadata = {
     'Unlock maximum discounts on Coding Ninjas courses using the special coupon code LEHUT. Explore a world of learning opportunities with Coding Ninjas.',
   keywords:
     'coding ninjas, coding ninjas coupon code, coding ninjas discounts, coding ninjas referral code, learn programming, online courses, LEHUT coupon code, coding ninjas LEHUT, best coding ninjas coupon, maximum coding ninjas discount, programming education',
-  ogTitle: 'Exclusive Coding Ninjas Coupon Code: LEHUT for Maximum Discounts',
-  ogDescription:
-    "Apply the special Coding Ninjas Coupon Code: LEHUT and get maximum discounts on any course. Guaranteed savings up to ₹5,000. Don't miss out on this exclusive offer!",
-  ogUrl: 'https://yourwebsite.com', // Replace with your website URL
-  ogSiteName: 'Coding Ninjas Coupon Premium',
-  ogImage: 'https://yourwebsite.com/images/og-image.jpg', // Replace with your OG image URL
+  // ogTitle: 'Exclusive Coding Ninjas Coupon Code: LEHUT for Maximum Discounts',
+  // ogDescription:
+  //   "Apply the special Coding Ninjas Coupon Code: LEHUT and get maximum discounts on any course. Guaranteed savings up to ₹5,000. Don't miss out on this exclusive offer!",
+  // ogUrl: 'https://yourwebsite.com', // Replace with your website URL
+  // ogSiteName: 'Coding Ninjas Coupon Premium',
+  // ogImage: 'https://yourwebsite.com/images/og-image.jpg', // Replace with your OG image URL
 };
 
 export default function RootLayout({
