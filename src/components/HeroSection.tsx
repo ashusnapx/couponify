@@ -1,4 +1,4 @@
-"use client"
+'use client';
 // Importing necessary dependencies
 import Image from 'next/image';
 import React, { useState } from 'react';
@@ -6,6 +6,7 @@ import { VscVerifiedFilled } from 'react-icons/vsc';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 import { FaCheck, FaCopy } from 'react-icons/fa';
 import { MdOutlineStarPurple500 } from 'react-icons/md';
+import * as confetti from 'confettis';
 
 // Get the current date
 const currentDate = new Date();
@@ -27,6 +28,19 @@ const HeroSection = () => {
       await navigator.clipboard.writeText('LEHUT');
       setIsCopied(true);
 
+      // Trigger confetti on copy
+      confetti.create({
+        x: 0.5,
+        y: 0.7,
+        count: 500,
+        ticks: -1,
+        gravity: [0.7, 1.2],
+        speed: [35, 45],
+        scale: [0.7, 0.8],
+        decay: 0.91,
+        shapes: ['circle','square', 'ellipse', 'star'],
+      });
+
       // Reset the copy state after a brief delay
       setTimeout(() => {
         setIsCopied(false);
@@ -39,12 +53,17 @@ const HeroSection = () => {
   // Function to handle the button click and simulate coupon benefits
   const handleButtonClick = () => {
     setIsLoading(true);
+    // Trigger confetti on button click
+    confetti.create();
 
     // Simulate adding coupon discounts and benefits
     setTimeout(() => {
-      setMessage('Coupon discounts and benefits added to your account');
+      setMessage(
+        'Coupon discounts and benefits are being added to your account'
+      );
+
       setTimeout(() => {
-        setMessage('Coupon discounts added successfully');
+        setMessage('Coupon discounts added successfully 🎉');
         // Redirect after 2 seconds
         setTimeout(() => {
           window.location.href =
@@ -184,7 +203,7 @@ const HeroSection = () => {
         <div>
           <button
             className={`bg-blue-500 w-full text-white px-8 py-3 rounded-full text-xl hover:bg-blue-600 transition duration-300 ease-in-out shadow-md ${
-              isLoading && 'cursor-not-allowed opacity-50'
+              isLoading && 'cursor-not-allowed opacity-100'
             }`}
             onClick={handleButtonClick}
             disabled={isLoading}
